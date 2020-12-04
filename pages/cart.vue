@@ -39,6 +39,8 @@
           
           </div>
       </div>
+
+     <h1 class="total">Total Price : {{totalP}}$</h1>
      
      <!-- CheckOut Form -->
      <form action="" class="main_form">
@@ -104,7 +106,8 @@ export default {
           total: 0,
         },
       ],
-      checked:true
+      checked:true,
+     
     };
   },
   methods:{
@@ -124,6 +127,15 @@ export default {
           this.Products.splice(i,1);
       }
       
+  },
+  computed:{
+    totalP(){
+      let amount = 0;
+    this.Products.forEach(product=>{
+        amount += (product.price)*(product.count);
+      });
+      return amount;
+    }
   }
 };
 </script>
@@ -178,6 +190,7 @@ export default {
       }
       h1 {
         text-align: left;
+        font-size: 25px !important;
       }
     }
     .main_item {
@@ -369,6 +382,10 @@ export default {
           }
       }
     }
+    .total{
+      text-align: right;
+      
+    }
      .main_form {
     max-width: 100%;
     width: 100%;
@@ -384,7 +401,7 @@ export default {
         display: flex;
         align-items: center;
         label{
-            margin-top: 25px;
+            margin-top: 35px;
             @media(max-width:470px)
             {
                 font-size: 14px;

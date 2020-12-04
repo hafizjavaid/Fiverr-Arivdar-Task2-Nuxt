@@ -43,11 +43,16 @@
         <input type="text" class="w50" placeholder="Province" required />
       </div>
       <!-- Input -->
+        <!-- Input -->
+      <div class="s_input">
+        <input type="text" class="w100" placeholder="Region" required />
+      </div>
+      <!-- Input -->
       <!-- Login Button -->
       <button type="submit" class="login_btn">Register</button>
       <!-- Login Button -->
 
-      <p>Already have an account? <router-link to="/signin">Login</router-link></p>
+      <p>Already have an account? <router-link to="/">Login</router-link></p>
     </form>
   </div>
 </template>
