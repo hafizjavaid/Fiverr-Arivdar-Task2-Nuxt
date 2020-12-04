@@ -116,11 +116,12 @@ export default {
          
       },
        sub(i){
-         this.Products[i].count -= 1;
-         if(this.Products[i].count == 0)
+         if(this.Products[i].count == 1)
          {
-            this.remove(i);
+           return;
          }
+         this.Products[i].count -= 1;
+         
          
       },
       remove(i){
