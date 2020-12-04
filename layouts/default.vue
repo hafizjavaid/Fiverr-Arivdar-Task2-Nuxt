@@ -1,0 +1,16 @@
+<template>
+  <div>
+    <Nuxt />
+  </div>
+</template>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+font-family: 'Nunito', sans-serif;
+
+}
+</style>
