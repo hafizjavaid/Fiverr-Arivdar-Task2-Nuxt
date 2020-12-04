@@ -1,129 +1,159 @@
 <template>
- 
-    <!--Navbar-->
-    <mdb-navbar color="darken-3" class="m-0">
-      <!-- mdbNavbar brand -->
-      <mdb-navbar-brand class="text-black text-uppercase">
-       YOURLOGO
-      </mdb-navbar-brand>
-      <mdb-navbar-toggler>
-       
-        <mdb-navbar-nav left>
-          <!-- Featured Item -->
-          <mdb-dropdown tag="li" megaMenu class="nav-item">
-            <mdb-dropdown-toggle
-              slot="toggle"
-              class="text-uppercase"
-              tag="a"
-              transparent
-              navLink
-              waves-fixed
-              >Features</mdb-dropdown-toggle
-            >
-            <mdb-dropdown-menu
-              class="mega-menu v-2 z-depth-1 darken-3 py-5 px-3 feature_dd"
-            >
-             <div class="row">   
-                <div class="col-md-6 col-xl-3 sub-menu mb-0" v-for="(feature,i) in features" :key="i">
-                  <h6
-                    class="sub-title text-uppercase font-weight-bold black-text"
-                  >
-                   {{feature.title}}
-                  </h6>
-                 <ul class="list-unstyled m_list">               
-                    <li v-for="(list,j) in feature.list" :key="j">
-                      <img :src="list.img" alt="" />
-                       <div class="p_detail">
-                         <h6>{{list.name}}</h6>
-                         <p>{{list.detail}}</p>
-                       </div>
-                    </li>
-                  </ul>
-                </div>  
+  <!--Navbar-->
+  <mdb-navbar color="darken-3" class="m-0" light>
+    <!-- mdbNavbar brand -->
+    <mdb-navbar-brand class="text-black text-uppercase">
+      YOURLOGO
+    </mdb-navbar-brand>
+    <mdb-navbar-toggler>
+      <mdb-navbar-nav left>
+        <!-- Featured Item -->
+        <mdb-dropdown tag="li" megaMenu class="nav-item">
+          <mdb-dropdown-toggle
+            slot="toggle"
+            class="text-uppercase"
+            tag="a"
+            transparent
+            navLink
+            waves-fixed
+            >Features</mdb-dropdown-toggle
+          >
+          <mdb-dropdown-menu
+            class="mega-menu v-2 z-depth-1 darken-3 py-5 px-3 feature_dd"
+          >
+            <div class="row">
+              <div
+                class="col-md-6 col-xl-3 sub-menu mb-0"
+                v-for="(feature, i) in features"
+                :key="i"
+              >
+                <h6
+                  class="sub-title text-uppercase font-weight-bold black-text"
+                >
+                  {{ feature.title }}
+                </h6>
+                <ul class="list-unstyled m_list">
+                  <li v-for="(list, j) in feature.list" :key="j">
+                    <img :src="list.img" alt="" />
+                    <div class="p_detail">
+                      <h6>{{ list.name }}</h6>
+                      <p>{{ list.detail }}</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            </mdb-dropdown-menu>
-          </mdb-dropdown>
-          <!-- Featured Item -->
-          <!-- Techor -->
-          <mdb-dropdown tag="li" megaMenu class="nav-item">
-            <mdb-dropdown-toggle
-              slot="toggle"
-              class="text-uppercase"
-              tag="a"
-              transparent
-              navLink
-              waves-fixed
-              >Technology</mdb-dropdown-toggle
-            >
-            <mdb-dropdown-menu
-              class="mega-menu v-2 z-depth-1 darken-3 py-5 px-3 tech_dd"
-            >
-            <div class="row">   
-                <div class="col-md-6 col-xl-4 sub-menu mb-0" v-for="(feature,i) in technology" :key="i">
-                  <h6
-                    class="sub-title text-uppercase font-weight-bold black-text"
-                  >
-                   {{feature.title}}
-                  </h6>
-                 <ul class="list-unstyled m_list">               
-                    <li v-for="(list,j) in feature.list" :key="j">
-                      <img :src="list.img" alt="" />
-                       <div class="p_detail">
-                         <h6>{{list.name}}</h6>
-                         <p>{{list.detail}}</p>
-                       </div>
-                    </li>
-                  </ul>
-                </div>  
+            </div>
+          </mdb-dropdown-menu>
+        </mdb-dropdown>
+        <!-- Featured Item -->
+        <!-- Techor -->
+        <mdb-dropdown tag="li" megaMenu class="nav-item">
+          <mdb-dropdown-toggle
+            slot="toggle"
+            class="text-uppercase"
+            tag="a"
+            transparent
+            navLink
+            waves-fixed
+            >Technology</mdb-dropdown-toggle
+          >
+          <mdb-dropdown-menu
+            class="mega-menu v-2 z-depth-1 darken-3 py-5 px-3 tech_dd"
+          >
+            <div class="row">
+              <div
+                class="col-md-6 col-xl-4 sub-menu mb-0"
+                v-for="(feature, i) in technology"
+                :key="i"
+              >
+                <h6
+                  class="sub-title text-uppercase font-weight-bold black-text"
+                >
+                  {{ feature.title }}
+                </h6>
+                <ul class="list-unstyled m_list">
+                  <li v-for="(list, j) in feature.list" :key="j">
+                    <img :src="list.img" alt="" />
+                    <div class="p_detail">
+                      <h6>{{ list.name }}</h6>
+                      <p>{{ list.detail }}</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            </mdb-dropdown-menu>
-          </mdb-dropdown>
-          <!-- Techor -->
+            </div>
+          </mdb-dropdown-menu>
+        </mdb-dropdown>
+        <!-- Techor -->
 
-          <!-- LifStyled -->
-          <mdb-dropdown tag="li" megaMenu class="nav-item">
-            <mdb-dropdown-toggle
-              slot="toggle"
-              class="text-uppercase"
-              tag="a"
-              transparent
-              navLink
-              waves-fixed
-              >Lifestyle</mdb-dropdown-toggle
-            >
-            <mdb-dropdown-menu
-              class="mega-menu v-2 z-depth-1 darken-3 py-5 px-3 life_dd"
-            >
-              <div class="row">   
-                <div class="col-md-6 col-xl-6 sub-menu mb-0" v-for="(feature,i) in life" :key="i">
-                  <h6
-                    class="sub-title text-uppercase font-weight-bold black-text"
-                  >
-                   {{feature.title}}
-                  </h6>
-                 <ul class="list-unstyled m_list">               
-                    <li v-for="(list,j) in feature.list" :key="j">
-                      <img :src="list.img" alt="" />
-                       <div class="p_detail">
-                         <h6>{{list.name}}</h6>
-                         <p>{{list.detail}}</p>
-                       </div>
-                    </li>
-                  </ul>
-                </div>  
+        <!-- LifStyled -->
+        <mdb-dropdown tag="li" megaMenu class="nav-item">
+          <mdb-dropdown-toggle
+            slot="toggle"
+            class="text-uppercase"
+            tag="a"
+            transparent
+            navLink
+            waves-fixed
+            >Lifestyle</mdb-dropdown-toggle
+          >
+          <mdb-dropdown-menu
+            class="mega-menu v-2 z-depth-1 darken-3 py-5 px-3 life_dd"
+          >
+            <div class="row">
+              <div
+                class="col-md-6 col-xl-6 sub-menu mb-0"
+                v-for="(feature, i) in life"
+                :key="i"
+              >
+                <h6
+                  class="sub-title text-uppercase font-weight-bold black-text"
+                >
+                  {{ feature.title }}
+                </h6>
+                <ul class="list-unstyled m_list">
+                  <li v-for="(list, j) in feature.list" :key="j">
+                    <img :src="list.img" alt="" />
+                    <div class="p_detail">
+                      <h6>{{ list.name }}</h6>
+                      <p>{{ list.detail }}</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            </mdb-dropdown-menu>
-          </mdb-dropdown>
-          <!-- LifStyled -->
-       
-         
-        </mdb-navbar-nav>
-      
-      
-      </mdb-navbar-toggler>
-    </mdb-navbar>
-    <!--/.Navbar-->
-  
+            </div>
+          </mdb-dropdown-menu>
+        </mdb-dropdown>
+        <!-- LifStyled -->
+
+        <!-- Dropdown -->
+        <mdb-dropdown tag="li" multiLevel class="nav-item">
+          <mdb-dropdown-toggle
+            slot="toggle"
+            class="text-uppercase"
+            tag="a"
+            transparent
+            navLink
+            waves-fixed
+            >Multi-level</mdb-dropdown-toggle
+          >
+          <mdb-dropdown-menu class="mt-2 rounded-0 darken-3 border-0 z-depth-1">
+            <mdb-dropdown-item class="center text-black w-100 mx-auto"
+              >Item 1</mdb-dropdown-item
+            >
+             <mdb-dropdown-item class="center text-black w-100 mx-auto"
+              >Item 2</mdb-dropdown-item
+            >
+             <mdb-dropdown-item class="center text-black w-100 mx-auto"
+              >Item 3</mdb-dropdown-item
+            >
+          </mdb-dropdown-menu>
+        </mdb-dropdown>
+        <!-- Dropdown -->
+      </mdb-navbar-nav>
+    </mdb-navbar-toggler>
+  </mdb-navbar>
+  <!--/.Navbar-->
 </template>
 
 <script>
@@ -159,195 +189,195 @@ export default {
     mdbDropdownMenu,
     mdbDropdownItem
   },
-  data(){
-    return{
-      features:[
+  data() {
+    return {
+      features: [
         {
-          title:'Design',
-          list:[
+          title: "Design",
+          list: [
             {
               img: require(`~/assets/images/1.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/2.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/2.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/3.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
-            },
+              img: require(`~/assets/images/3.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
+            }
           ]
         },
         {
-          title:'Responsive',
-          list:[
+          title: "Responsive",
+          list: [
             {
-              img:require(`~/assets/images/5.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/5.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/2.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/2.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/3.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
-            },
+              img: require(`~/assets/images/3.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
+            }
           ]
         },
         {
-          title:'Standard',
-          list:[
+          title: "Standard",
+          list: [
             {
-              img:require(`~/assets/images/1.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/1.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/2.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/2.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/3.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
-            },
+              img: require(`~/assets/images/3.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
+            }
           ]
         },
         {
-          title:'Pricing',
-          list:[
+          title: "Pricing",
+          list: [
             {
-              img:require(`~/assets/images/1.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/1.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/2.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/2.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/3.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
-            },
+              img: require(`~/assets/images/3.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
+            }
           ]
-        },
+        }
       ],
-      technology:[
+      technology: [
         {
-          title:'Design',
-          list:[
+          title: "Design",
+          list: [
             {
               img: require(`~/assets/images/1.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/2.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/2.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/3.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
-            },
+              img: require(`~/assets/images/3.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
+            }
           ]
         },
         {
-          title:'Responsive',
-          list:[
+          title: "Responsive",
+          list: [
             {
-              img:require(`~/assets/images/5.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/5.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/2.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/2.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/3.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
-            },
+              img: require(`~/assets/images/3.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
+            }
           ]
         },
         {
-          title:'Standard',
-          list:[
+          title: "Standard",
+          list: [
             {
-              img:require(`~/assets/images/1.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/1.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/2.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/2.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/3.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
-            },
+              img: require(`~/assets/images/3.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
+            }
           ]
-        },
+        }
       ],
-       life:[
+      life: [
         {
-          title:'Design',
-          list:[
+          title: "Design",
+          list: [
             {
               img: require(`~/assets/images/1.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/2.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/2.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/3.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
-            },
+              img: require(`~/assets/images/3.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
+            }
           ]
         },
         {
-          title:'Responsive',
-          list:[
+          title: "Responsive",
+          list: [
             {
-              img:require(`~/assets/images/5.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/5.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/2.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
+              img: require(`~/assets/images/2.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
             },
             {
-              img:require(`~/assets/images/3.jpg`),
-              name:'Product Name',
-              detail:'Lorem ipsum dolor sit amet.'
-            },
+              img: require(`~/assets/images/3.jpg`),
+              name: "Product Name",
+              detail: "Lorem ipsum dolor sit amet."
+            }
           ]
         }
       ]
-    }
+    };
   }
 };
 </script>
@@ -357,8 +387,7 @@ export default {
   width: 90vw;
   left: 50%;
   transform: translateX(-10%);
-  @media(max-width:990px)
-  {
+  @media (max-width: 990px) {
     transform: translateX(0%);
   }
 }
@@ -366,8 +395,7 @@ export default {
   width: 90vw;
   left: 50%;
   transform: translateX(-20%);
-  @media(max-width:990px)
-  {
+  @media (max-width: 990px) {
     transform: translateX(0%);
   }
 }
@@ -375,38 +403,33 @@ export default {
   width: 90vw;
   left: 50%;
   transform: translateX(-30%);
-  @media(max-width:990px)
-  {
+  @media (max-width: 990px) {
     transform: translateX(0%);
   }
- 
 }
- .m_list {
-    li{
-      margin: 5px 0;
-      display: flex;
-      cursor: pointer;
-      transition: .3s linear;
-      &:hover{
-
+.m_list {
+  li {
+    margin: 5px 0;
+    display: flex;
+    cursor: pointer;
+    transition: 0.3s linear;
+    &:hover {
       background-color: #eee;
-
-
-      }
-      .p_detail{
-        h6,p{
-          margin: 0;
-        }
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-     
     }
-    img {
-      width: 60px;
-      height: 60px;
-      margin-right: 10px;
+    .p_detail {
+      h6,
+      p {
+        margin: 0;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
+  img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+}
 </style>
