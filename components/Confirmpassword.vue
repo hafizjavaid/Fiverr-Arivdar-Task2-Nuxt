@@ -1,5 +1,5 @@
 <template>
-  <div class="p_modal">
+  <div class="p_modal" id="close_modal" @click="close">
     <div class="main_modal">
       <h1>Recover Password</h1>
       <p>You will receive a recovery email at this email</p>
@@ -7,9 +7,9 @@
         <!-- Input -->
         <input type="email" placeholder="Email" required />
         <!-- Input -->
-         <!-- Login Button -->
-      <button type="submit" class="submit_btn" @click="submit">Submit</button>
-       <!-- Login Button -->
+        <!-- Login Button -->
+        <button type="submit" class="submit_btn" @click="submit">Submit</button>
+        <!-- Login Button -->
         <p>Didn’t received? <a @click="resend">Resend</a></p>
       </form>
     </div>
@@ -18,12 +18,19 @@
 
 <script>
 export default {
-  methods:{
-    submit(){
+  methods: {
+    submit() {
       this.$emit("close");
     },
-    resend(){
+    resend() {
       this.$emit("close");
+    },
+    close(e) {
+      // console.log(e.target);
+      if (e.target.classList.contains('p_modal') ) {
+        this.$emit("close");
+      }
+      return;
     }
   }
 };
@@ -43,18 +50,17 @@ export default {
   align-items: center;
   font-family: "Roboto", sans-serif;
   z-index: 9;
-  background-color: rgba(0,0,0,0.5);
- 
+  background-color: rgba(0, 0, 0, 0.5);
 
   .main_modal {
     max-width: 581px;
     background-color: #fff;
-   
+
     margin: auto;
-  
+
     width: 94%;
     min-height: 350px;
-   
+
     padding: 20px;
     padding-top: 25px;
     h1,
@@ -78,50 +84,50 @@ export default {
         font-size: 16px;
         line-height: 19px;
         color: #000000;
-         &:focus{
-        border: 2px solid #000;
-        outline: none;
+        &:focus {
+          border: 2px solid #000;
+          outline: none;
+        }
       }
-      }
-          .submit_btn{
-      max-width: 441px;
-      width: 100%;
-      height: 45px;
+      .submit_btn {
+        max-width: 441px;
+        width: 100%;
+        height: 45px;
         display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000000;
-border: 1px solid #FFFFFF;
-color: #FFFFFF;
-background-color: red;
- margin-top: 25px;
- transition: .3s linear;
- font-weight: bold;
- cursor: pointer;
-
-&:focus{
-    border: none;
-    outline: none;
-}
-   &:hover{
-        background-color: #ffffff;
-        color: #000;
+        justify-content: center;
+        align-items: center;
+        background: #000000;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        background-color: red;
+        margin-top: 25px;
+        transition: 0.3s linear;
         font-weight: bold;
-        border: 1px solid red;
-      }
-}
-  p{
-        font-style: normal;
-font-weight: normal;
-font-size: 16px;
- margin-top: 18px;
- text-align: left;
-a{
-
-        color: #108CFF;
-        text-decoration-color:#108CFF;
         cursor: pointer;
-}}
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+        &:hover {
+          background-color: #ffffff;
+          color: #000;
+          font-weight: bold;
+          border: 1px solid red;
+        }
+      }
+      p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        margin-top: 18px;
+        text-align: left;
+        a {
+          color: #108cff;
+          text-decoration-color: #108cff;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
