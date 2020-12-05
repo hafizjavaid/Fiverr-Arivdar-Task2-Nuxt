@@ -82,7 +82,7 @@ export default {
   .main_form {
     max-width: 600px;
     width: 100%;
-    margin: auto;
+    margin:20px auto;
     padding: 20px;
     padding-top: 5px;
      border: 2px solid red;

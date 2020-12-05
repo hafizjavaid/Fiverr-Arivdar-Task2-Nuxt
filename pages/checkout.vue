@@ -18,7 +18,7 @@
  <!-- Input -->
       <div class="s_input">
         <input type="text" class="w33" placeholder="Card Number" required />
-        <input type="date" class="w33" placeholder="Expire Date" required />
+        <input type="text" class="w33" placeholder="Expire Date" required />
          <input type="text" class="w33" placeholder="CVV Number" required />
       </div>
       <!-- Input -->

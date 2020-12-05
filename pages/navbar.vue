@@ -477,6 +477,7 @@ export default {
   height: 60px;
   align-items: center;
   padding: 0 20px;
+  padding-right: 30px;
   border-bottom: 1px solid #000;
   a {
     margin-right: 33px;
