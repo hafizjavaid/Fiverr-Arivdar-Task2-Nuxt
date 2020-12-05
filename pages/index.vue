@@ -53,6 +53,11 @@ this.show = !this.show;
     width: 100%;
     margin: auto;
     padding: 20px;
+    border: 2px solid red;
+     @media(max-width:560px)
+    {
+      width: 95%;
+    }
     h1 {
       text-align: center;
       font-style: normal;
@@ -86,7 +91,7 @@ this.show = !this.show;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #000000;
+      background: red;
       border: 1px solid #ffffff;
       color: #ffffff;
       margin-top: 25px;
@@ -101,7 +106,7 @@ this.show = !this.show;
         background-color: #ffffff;
         color: #000;
         font-weight: bold;
-        border: 1px solid #000;
+        border: 1px solid red;
       }
     }
     .f_password {

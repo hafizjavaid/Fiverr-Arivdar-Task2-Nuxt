@@ -85,6 +85,11 @@ export default {
     margin: auto;
     padding: 20px;
     padding-top: 5px;
+     border: 2px solid red;
+      @media(max-width:560px)
+    {
+      width: 95%;
+    }
     h1 {
       text-align: center;
       font-style: normal;
@@ -154,6 +159,7 @@ export default {
       background: #000000;
       border: 1px solid #ffffff;
       color: #ffffff;
+       background: red;
       margin-top: 25px;
       transition: 0.3s linear;
       font-weight: bold;
@@ -162,11 +168,11 @@ export default {
         border: none;
         outline: none;
       }
-      &:hover {
+      &:hover{
         background-color: #ffffff;
         color: #000;
         font-weight: bold;
-        border: 1px solid #000;
+        border: 1px solid red;
       }
     }
     .f_password {

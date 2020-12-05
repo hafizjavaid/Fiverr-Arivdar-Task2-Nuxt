@@ -4,21 +4,21 @@
       <h1 class="form_title">Checkout</h1>
       <!-- Input -->
       <div class="s_input">
-        <input type="text" class="w50" placeholder="First Name" required />
-        <input type="text" class="w50" placeholder="Last Name" required />
+        <div class="w50 data" >Hafiz</div>
+         <div  class="w50 data">Javaid Iqbal</div>
       </div>
       <!-- Input -->
 
        <!-- Input -->
       <div class="s_input">
-        <input type="text" class="w100" placeholder="Total Price" required />
+        <div  class="w100 data">30$</div>
       </div>
       <!-- Input -->
 
  <!-- Input -->
       <div class="s_input">
         <input type="text" class="w33" placeholder="Card Number" required />
-        <input type="text" class="w33" placeholder="Expire Date" required />
+        <input type="date" class="w33" placeholder="Expire Date" required />
          <input type="text" class="w33" placeholder="CVV Number" required />
       </div>
       <!-- Input -->
@@ -37,6 +37,7 @@ export default {
   },
   data() {
     return {
+     
     
     };
   },
@@ -55,6 +56,11 @@ export default {
     margin: auto;
     padding: 20px;
     padding-top: 5px;
+    border: 2px solid red;
+    @media(max-width:560px)
+    {
+      width: 95%;
+    }
     h1 {
       text-align: center;
       font-style: normal;
@@ -62,6 +68,7 @@ export default {
       font-size: 56px;
       color: #000000;
       margin: 0;
+     
     }
     .s_input {
       display: flex;
@@ -87,8 +94,8 @@ export default {
       max-width: 100%;
     }
     .w33{
-        flex: 0 0 31%;
-      max-width: 31%;
+        flex: 0 0 32%;
+      max-width: 32%;
        @media(max-width: 560px)
       {
       flex: 0 0 100%;
@@ -96,9 +103,23 @@ export default {
        
       }
     }
+    .data{
+    
+       width: 100%;
+      height: 45px;
+      border-bottom: 2px solid red;
+      margin-top: 25px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+ 
+    }
     input {
-      //   max-width: 550px;
-
       width: 100%;
       height: 45px;
       border: 1px solid #000000;
@@ -124,6 +145,7 @@ export default {
       background: #000000;
       border: 1px solid #ffffff;
       color: #ffffff;
+      background-color: red;
       margin-top: 25px;
       transition: 0.3s linear;
       font-weight: bold;
@@ -132,11 +154,11 @@ export default {
         border: none;
         outline: none;
       }
-      &:hover {
+        &:hover{
         background-color: #ffffff;
         color: #000;
         font-weight: bold;
-        border: 1px solid #000;
+        border: 1px solid red;
       }
     }
     

@@ -27,11 +27,7 @@
                 v-for="(feature, i) in features"
                 :key="i"
               >
-                <h6
-                  class="sub-title text-uppercase font-weight-bold black-text"
-                >
-                  {{ feature.title }}
-                </h6>
+                
                 <ul class="list-unstyled m_list">
                   <li v-for="(list, j) in feature.list" :key="j">
                     <img :src="list.img" alt="" />
@@ -66,11 +62,7 @@
                 v-for="(feature, i) in technology"
                 :key="i"
               >
-                <h6
-                  class="sub-title text-uppercase font-weight-bold black-text"
-                >
-                  {{ feature.title }}
-                </h6>
+               
                 <ul class="list-unstyled m_list">
                   <li v-for="(list, j) in feature.list" :key="j">
                     <img :src="list.img" alt="" />
@@ -106,11 +98,7 @@
                 v-for="(feature, i) in life"
                 :key="i"
               >
-                <h6
-                  class="sub-title text-uppercase font-weight-bold black-text"
-                >
-                  {{ feature.title }}
-                </h6>
+                
                 <ul class="list-unstyled m_list">
                   <li v-for="(list, j) in feature.list" :key="j">
                     <img :src="list.img" alt="" />
@@ -126,30 +114,7 @@
         </mdb-dropdown>
         <!-- LifStyled -->
 
-        <!-- Dropdown -->
-        <mdb-dropdown tag="li" multiLevel class="nav-item">
-          <mdb-dropdown-toggle
-            slot="toggle"
-            class="text-uppercase"
-            tag="a"
-            transparent
-            navLink
-            waves-fixed
-            >Multi-level</mdb-dropdown-toggle
-          >
-          <mdb-dropdown-menu class="mt-2 rounded-0 darken-3 border-0 z-depth-1">
-            <mdb-dropdown-item class="center text-black w-100 mx-auto"
-              >Item 1</mdb-dropdown-item
-            >
-             <mdb-dropdown-item class="center text-black w-100 mx-auto"
-              >Item 2</mdb-dropdown-item
-            >
-             <mdb-dropdown-item class="center text-black w-100 mx-auto"
-              >Item 3</mdb-dropdown-item
-            >
-          </mdb-dropdown-menu>
-        </mdb-dropdown>
-        <!-- Dropdown -->
+       
       </mdb-navbar-nav>
     </mdb-navbar-toggler>
   </mdb-navbar>

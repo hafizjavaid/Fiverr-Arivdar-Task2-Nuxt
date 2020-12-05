@@ -42,16 +42,16 @@ export default {
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
-  // z-index: 99;
-  background-color: rgba(0,0,0,0.2);
-  background: transparent;
+  z-index: 9;
+  background-color: rgba(0,0,0,0.5);
+ 
 
   .main_modal {
     max-width: 581px;
     background-color: #fff;
-    border: 2px solid #000;
+   
     margin: auto;
-    // height: 30vh;
+  
     width: 94%;
     min-height: 350px;
    
@@ -93,6 +93,7 @@ export default {
   background: #000000;
 border: 1px solid #FFFFFF;
 color: #FFFFFF;
+background-color: red;
  margin-top: 25px;
  transition: .3s linear;
  font-weight: bold;
@@ -102,11 +103,11 @@ color: #FFFFFF;
     border: none;
     outline: none;
 }
- &:hover{
+   &:hover{
         background-color: #ffffff;
         color: #000;
         font-weight: bold;
-        border: 1px solid #000;
+        border: 1px solid red;
       }
 }
   p{
