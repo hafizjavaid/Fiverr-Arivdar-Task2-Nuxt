@@ -69,13 +69,29 @@
 
       
        <!-- Billing Address -->
-        <input
+        <!-- <input
           type="text"
           v-if="!checked"
           placeholder="Billing Address"
           required
           v-model="billingAddress"
-        />
+        /> -->
+
+        <h5 v-if="!checked">Billing Addresses</h5>
+        <div class="t_checkbox" v-if="!checked">
+          <div class="radio_list">
+            <div class="radiobox" v-for="(address, i) in bAdress" :key="i">
+              <input
+                type="radio"
+                v-model="bSelected"
+                :value="address.text"
+                :id="address.id"
+                name="Baddress"
+              />
+              <label :for="address.id">{{ address.text }}</label>
+            </div>
+          </div>
+        </div>
       
         <!-- Login Button -->
         <router-link to="/checkout" class="login_btn">CheckOut</router-link>
@@ -122,6 +138,7 @@ export default {
       checked: true,
       // Note : In order to get delivery address value use selected
       selected: "",
+      bSelected:'',
       billingAddress:'',
       dAdress: [
         {
@@ -135,6 +152,20 @@ export default {
         {
           id: 33,
           text: "G-11/4, Street 62, House 569, Islamabad"
+        }
+      ],
+      bAdress: [
+        {
+          id: 13,
+          text: "G-11/6, Street 62, House 569, Islamabad"
+        },
+        {
+          id: 24,
+          text: "G-11/7, Street 62, House 569, Islamabad"
+        },
+        {
+          id: 36,
+          text: "G-11/8, Street 62, House 569, Islamabad"
         }
       ]
     };
@@ -333,9 +364,8 @@ export default {
             justify-content: center;
             align-items: center;
             margin: 0 5px;
-
-            cursor: not-allowed;
             transition: 0.3s linear;
+             user-select: none;
             &:hover {
               background-color: none !important;
               color: #000 !important;
@@ -394,6 +424,10 @@ export default {
     }
     .total {
       text-align: right;
+      @media(max-width:500px)
+      {
+        font-size: 20px;
+      }
     }
     .main_form {
       max-width: 100%;
@@ -409,6 +443,10 @@ export default {
         padding-left: 0;
         font-size: 25px;
         font-weight: bold;
+         @media(max-width:500px)
+      {
+        font-size: 20px;
+      }
       }
       .t_checkbox {
         display: flex;
@@ -421,13 +459,21 @@ export default {
           max-width: 50%;
           display: flex;
           flex-direction: column;
+          @media(max-width:890px)
+          {
+             flex: 0 0 100%;
+          max-width: 100%;
+          }
           .radiobox {
             display: flex;
             align-items: center;
-            label {
+            background: #fff;
+            margin: 5px 0;
+           padding-left: 10px;
+              label {
               margin-top: 10px;
-              @media (max-width: 890px) {
-                font-size: 14px;
+              @media (max-width: 500px) {
+                font-size: 16px;
               }
             }
             input {
